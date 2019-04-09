@@ -1,0 +1,34 @@
+.el-container {
+  height: 100%;
+}
+.el-menu {
+  border: none;
+}
+.el-header {
+  height: 60px;
+  line-height: 60px;
+}
+.el-main {
+  height: 100%;
+  background-color: #eee;
+  & > div {
+    min-height: 100%;
+  }
+}
+.logo{
+  display: flex;
+  justify-content: center;
+  & > img{
+    width: 40px;
+    height: 40px;
+    margin: 10px 10px 0 20px;
+  }
+  & > span {
+    flex: 2;
+    text-align: left;
+    line-height: 45px;
+    color: $white;
+    padding: 10px 10px 0 0;
+    font-size: 18px;
+  }
+}

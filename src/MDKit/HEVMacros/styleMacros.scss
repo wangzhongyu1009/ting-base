@@ -1,0 +1,27 @@
+// 基础颜色字体
+//-------------------------------
+$white: #fff !default;
+$black: #000 !default;
+$lighterGray: #eee !default;
+$lightGray: #ccc !default;
+$neutralGray: #aaa !default;
+$gray: #999 !default;
+$darkGray: #666 !default;
+$darkerGray: #333 !default;
+$red: #d45b5b !default;
+$linkColor: #42b983 !default;
+$themeColor: #FAFBFD !default;
+$basicFontSize: 1.3rem !default;
+$basicFontFamily: "Helvetica", "Microsoft Yahei", san-serif !default;
+$basicFontColor: $darkGray !default;
+$text:#6678ff !default;
+$mainText:#333333 !default;
+$back-eee:#eeeeee !default;
+$normalFontSize: 14px !default;
+$FontSize-40: 40px !default;
+
+:root{
+  --base: red;
+  --spacing: 10px;
+  --blur: 10px;
+}
