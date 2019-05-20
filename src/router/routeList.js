@@ -1,7 +1,7 @@
 // 路由配置列表
 const routeList = [
-  '/login',
-  '/test'
+  '/Login',
+  '/Example'
 ]
 
 export default routeList

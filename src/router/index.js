@@ -33,7 +33,7 @@ router.beforeEach((to, from, next) => {
   initRoute()
   // 没有权限时跳转到登陆页面
   if (!isPermission) {
-    next({path: '/login', replace: true})
+    next({path: '/Login', replace: true})
   } else {
     next()
   }

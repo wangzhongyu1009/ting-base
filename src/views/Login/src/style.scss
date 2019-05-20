@@ -1,0 +1,131 @@
+/**
+ * 登陆页面样式表
+ * Created By Wangzhongyu 2019-04-22
+ * 如需修改联系zy.wang@muheda.com
+ */
+
+.login {
+  height: 100%;
+  background: url('~@/assets/images/Login/login_bg.png') 0 0 no-repeat;
+  background-size: 100% 100%;
+  position: relative;
+  .outer_box {
+    width: 80%;
+    height: 85%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    background-color: #fff;
+    border-radius: 13px;
+  }
+  .inner_box {
+    height: 100%;
+    background: url('~@/assets/images/Login/bg_inner.png') 40px bottom no-repeat;
+    background-size: 50% 90%;
+    position: relative;
+  }
+  .login_form_container {
+    width: 30%;
+    height: 62%;
+    background-color: #fff;
+    box-shadow: 0px 0px 19px 0px rgba(67,69,252,0.17);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 8%;
+    margin: auto;
+  }
+  .login_title {
+    color: #333;
+    font-size: 1.5vw;
+    text-align: center;
+    font-weight: 600;
+    line-height: 12vh;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .login_form {
+    padding: 0 10%;
+    & > .ivu-form-item {
+      margin-bottom: 3.5vh;
+    }
+  }
+  .ivu-form-item-content {
+    line-height: 5vh;
+  }
+  .login_input {
+    & > input {
+      height: 5vh;
+      font-size: 14px;
+    }
+  }
+  .input_code {
+    width: 50%;
+    vertical-align: top;
+  }
+  .submit_btn {
+    width: 100%;
+    height: 5vh;
+    font-size: 18px;
+    border-radius: 0;
+    line-height: 5vh;
+    padding: 0;
+  }
+  .reset_psw_btn {
+    text-align: right;
+    font-size: 12px;
+    color: #999;
+    letter-spacing: 1px;
+    line-height: 17px;
+  }
+  .code {
+    display: inline-block;
+    width: 30%;
+    height: 5vh;
+    vertical-align: top;
+    background-color: #D8D8D8;
+    margin-left: 5%;
+    text-align: center;
+    font-size: 2.5vh;
+    letter-spacing: 3px;
+  }
+  .change_code_btn {
+    display: inline-block;
+    color: #999999;
+    font-size: 14px;
+    line-height: 5vh;
+    width: 15%;
+    text-align: right;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+.modal_code_input {
+  width: 50%;
+  vertical-align: top;
+}
+.modal_code {
+  display: inline-block;
+  width: 30%;
+  vertical-align: top;
+  background-color: #D8D8D8;
+  margin-left: 5%;
+  text-align: center;
+  font-size: 20px;
+  letter-spacing: 3px;
+}
+.modal_change_code_btn {
+  display: inline-block;
+  color: #999999;
+  font-size: 14px;
+  width: 15%;
+  text-align: right;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

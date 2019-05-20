@@ -3,25 +3,25 @@
  *  Created by Wang Zhongyu on 2018/10/22.
  */
 
-const Layout = () => import(/* webpackChunkName: 'index' */ '../MDKit/MDUiKit/layout')
+const Layout = () => import(/* webpackChunkName: 'index' */ '@/WHKit/WHUiKit/Layout/index')
 
 const staticRoute = [
   {
     path: '/',
-    redirect: '/test'
+    redirect: '/Login'
   },
   {
-    path: '/login',
-    name: 'login',
-    component: () => import(/* webpackChunkName: 'login' */ '../pages/systemManagement/login')
+    path: '/Login',
+    name: 'Login',
+    component: () => import(/* webpackChunkName: 'Login' */ '@/views/Login/index')
   },
   {
-    path: '/test',
+    path: '/Example',
     component: Layout,
     children: [
       {
         path: '',
-        component: () => import(/* webpackChunkName: 'test' */ '../pages/orderManagement/test')
+        component: () => import(/* webpackChunkName: 'Example' */ '@/views/Example/index')
       }
     ]
   }
