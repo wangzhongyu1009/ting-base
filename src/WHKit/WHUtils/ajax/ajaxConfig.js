@@ -1,14 +1,12 @@
 import axios from './ajax'
-import qs from 'qs'
+// import qs from 'qs'
 
 const ajaxConfig = (data) => {
   if (!data['url']) return
-  if (!data['method']) data['method'] = 'get'
-  if (data['method'].toLocaleLowerCase() === 'get') {
+  if (data['method'] === 'get') {
     return new Promise((resolve, reject) => {
       axios.get(data['url'], {
-        params: data['params'],
-        showLoading: data['showLoading'] ? data['showLoading'] : false
+        params: data['params']
       }).then(res => {
         resolve(res.data)
       }).catch(err => {
@@ -16,11 +14,9 @@ const ajaxConfig = (data) => {
       })
     })
   }
-  if (data['method'].toLocaleLowerCase() === 'post') {
+  if (data['method'] === 'post') {
     return new Promise((resolve, reject) => {
-      axios.post(data['url'], qs.stringify(data['params'], { indices: false }), {
-        showLoading: data['showLoading'] ? data['showLoading'] : false
-      }).then(res => {
+      axios.post(data['url'], data['params']).then(res => {
         resolve(res.data)
       }).catch(err => {
         reject(err)

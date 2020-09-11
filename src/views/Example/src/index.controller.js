@@ -4,3 +4,8 @@
  * 如需修改联系zy.wang@muheda.com
  */
 
+export default {
+  methods: {
+    
+  }
+}

@@ -10,7 +10,7 @@
       <div class="inner_box">
         <div class="login_form_container">
           <div class="login_title">
-            项目管理系统
+            {{$t('login.login_bt')}}
           </div>
           <Form
             :model="loginForm"
@@ -19,14 +19,14 @@
             <FormItem>
               <Input
                 v-model="loginForm.userName"
-                placeholder="请输入用户名"
+                :placeholder="$t('login.login_qsryhm')"
                 class="login_input"
               />
             </FormItem>
             <FormItem>
               <Input
                 v-model="loginForm.password"
-                placeholder="请输入密码"
+                :placeholder="$t('login.login_qsrmm')"
                 type="password"
                 class="login_input"
               />
@@ -34,14 +34,14 @@
             <FormItem>
               <Input
                 v-model="loginForm.code"
-                placeholder="图片验证码"
+                :placeholder="$t('login.login_tpyzm')"
                 class="login_input input_code"
               />
               <span class="code">{{ verificationCode }}</span>
               <span
                 class="change_code_btn"
                 @click="changeCode"
-              >换一张</span>
+              >{{$t('login.login_hyz')}}</span>
             </FormItem>
             <FormItem>
               <Button
@@ -49,15 +49,22 @@
                 type="primary"
                 @click="login"
               >
-                登录
+                {{$t('login.login_dl')}}
               </Button>
             </FormItem>
-            <FormItem>
+            <FormItem style="position:relative">
+              <Dropdown @on-click="changeLang" style="position:absolute;top:-8px">
+                <span class="text_name">{{languageName}}</span>
+                <Dropdown-menu slot="list">
+                  <Dropdown-item name="zhCN">中文</Dropdown-item>
+                  <Dropdown-item name="en">English</Dropdown-item>
+                </Dropdown-menu>
+              </Dropdown>
               <div
                 class="reset_psw_btn"
                 @click="resetPassword"
               >
-                忘记密码
+                {{$t('login.login_wjmm')}}
               </div>
             </FormItem>
           </Form>
@@ -71,7 +78,7 @@
       class
     >
       <p slot="header">
-        找回密码
+        {{$t('login.login_zhmm')}}
       </p>
       <div style="margin-right:80px">
         <Form
@@ -80,30 +87,30 @@
           :label-width="100"
         >
           <FormItem
-            label="用户名："
+            :label="$t('login.login_yhm')"
             prop="userName"
           >
             <Input
               v-model="resetPswForm.userName"
-              placeholder="请输入用户名"
+              :placeholder="$t('login.login_qsryhm')"
             />
           </FormItem>
           <FormItem
-            label="邮箱地址："
+            :label="$t('login.login_yxdz')"
             prop="email"
           >
             <Input
               v-model="resetPswForm.email"
-              placeholder="请输入电子邮箱地址"
+              :placeholder="$t('login.login_qsrdzyxdz')"
             />
           </FormItem>
           <FormItem
-            label="验证码："
+            :label="$t('login.login_yzm')"
             prop="code"
           >
             <Input
               v-model="resetPswForm.code"
-              placeholder="请输入"
+              :placeholder="$t('common.common_qsr')"
               class="modal_code_input"
               style="width:50%;vertical-align:top"
             />
@@ -111,13 +118,13 @@
             <span
               class="modal_change_code_btn"
               @click="changeCode"
-            >换一张</span>
+            >{{$t('login.login_hyz')}}</span>
           </FormItem>
         </Form>
       </div>
       <div slot="footer">
         <t-button
-          text="确定"
+          :text="$t('common.common_qd')"
           @click="submit"
         />
       </div>
@@ -127,4 +134,4 @@
 
 <script src="./src/index.js"></script>
 
-<style lang="scss" src="./src/style.scss"></style>
+<style lang="scss" scoped src="./src/style.scss"></style>

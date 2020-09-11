@@ -5,41 +5,33 @@
 -->
 
 <template>
-  <Menu active-name="1-2" :open-names="['1']" theme="dark" width="auto" :class="menuitemClasses" accordion>
+  <Menu mode="horizontal" active-name="1-2" theme="light" width="auto">
     <Submenu name="1">
       <template slot="title">
-        <Icon type="ios-navigate"></Icon>
         <span>系统管理</span>
       </template>
       <MenuItem name="1-1">
-        <Icon type="ios-people"></Icon>
         <span>用户管理</span>
       </MenuItem>
       <MenuItem name="1-2">
-        <Icon type="ios-people"></Icon>
         <span>组织管理</span>
       </MenuItem>
       <MenuItem name="1-3">
-        <Icon type="ios-people"></Icon>
         <span>权限管理</span>
       </MenuItem>
     </Submenu>
     <Submenu name="2">
       <template slot="title">
-        <Icon type="ios-construct"></Icon>
         <span>日志管理</span>
       </template>
       <MenuItem name="2-1">
-        <Icon type="ios-people"></Icon>
         <span>系统日志</span>
       </MenuItem>
     </Submenu>
     <MenuItem name="3">
-      <Icon type="ios-settings" style="margin-right:12px"></Icon>
       <span>控制台</span>
     </MenuItem>
     <MenuItem name="4">
-      <Icon type="ios-settings" style="margin-right:12px"></Icon>
       <span>控制台</span>
     </MenuItem>
   </Menu>

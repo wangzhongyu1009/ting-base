@@ -4,7 +4,6 @@
  * 如需修改联系zy.wang@muheda.com
  */
 
-// import { getNetworkData, postNetworkData } from '@/config/api'
 export default {
   methods: {
 

@@ -7,15 +7,13 @@
 import DataMixins from './Data.mixins'
 import NetWorkMixins from './network.mixins'
 import Controller from './index.controller'
-import { Form, FormItem, Input, Button, Modal } from 'iview'
+import { mapState, mapActions } from 'vuex'
 
 export default {
   mixins: [DataMixins, NetWorkMixins, Controller],
-  components: {
-    Form,
-    FormItem,
-    Input,
-    Button,
-    Modal
+  computed: {
+    ...mapState({
+      lang: state => state.app.lang
+    })
   }
 }

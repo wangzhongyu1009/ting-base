@@ -18,7 +18,8 @@ export default {
         code: ''
       },
       verificationCode: '64Wv',
-      modal: false
+      modal: false,
+      languageName: this.exchangName(this.getLocalData('lang'))
     }
   }
 }

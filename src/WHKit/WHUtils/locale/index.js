@@ -1,23 +1,16 @@
-import Vue from 'vue'
-import VueI18n from 'vue-i18n'
-import customZhCn from './lang/zh-CN'
-import customEnUs from './lang/en-US'
-
-Vue.use(VueI18n)
-
-// 自动根据浏览器系统语言设置语言
-let lang = window.localStorage.getItem('lang') || 'zh-CN'
-
-Vue.config.lang = lang
-
-Vue.locale = () => {}
+import iviewZhLocale from 'iview/src/locale/lang/zh-CN';
+import iviewEnLocale from 'iview/src/locale/lang/en-US';
+import enLocale from './lang/en'
+import zhLocale from './lang/zhCN'
 const messages = {
-  'zh-CN': customZhCn,
-  'en-US': customEnUs
+  en: {
+    ...enLocale,
+    ...iviewEnLocale
+  },
+  zhCN: {
+    ...zhLocale,
+    ...iviewZhLocale
+  }
 }
-const i18n = new VueI18n({
-  locale: lang,
-  messages
-})
 
-export default i18n
+export default messages
