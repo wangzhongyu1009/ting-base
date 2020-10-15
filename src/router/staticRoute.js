@@ -3,7 +3,14 @@
  *  Created by Wang Zhongyu on 2018/10/22.
  */
 
-const Layout = () => import(/* webpackChunkName: 'index' */ '@/WHKit/WHUiKit/Layout/index')
+const LocalLayout = window.localStorage.getItem('layout')
+
+let Layout = null
+if (LocalLayout === 'H') {
+  Layout = () => import(/* webpackChunkName: 'index' */ '@/WHKit/WHUiKit/Layout/index')
+} else {
+  Layout = () => import(/* webpackChunkName: 'index' */ '@/WHKit/WHUiKit/VLayout/index')
+}
 
 const staticRoute = [
   {
@@ -16,12 +23,18 @@ const staticRoute = [
     component: () => import(/* webpackChunkName: 'Login' */ '@/views/Login/index')
   },
   {
-    path: '/Example',
+    path: '/System',
     component: Layout,
     children: [
       {
-        path: '',
-        component: () => import(/* webpackChunkName: 'Example' */ '@/views/Example/index')
+        path: '/System/DropDown',
+        name: 'DropDown',
+        component: () => import(/* webpackChunkName: 'Example' */ '@/views/System/DropDown/index')
+      },
+      {
+        path: '/System/Example',
+        name: 'Example',
+        component: () => import(/* webpackChunkName: 'Example' */ '@/views/System/Example/index')
       }
     ]
   }

@@ -1,6 +1,6 @@
 export default {
   login: {
-    login_bt: '项目管理系统',
+    login_bt: '新奥能源泛能工程数字化系统',
     login_yhm: '用户名',
     login_yxdz: '邮箱地址',
     login_qsrdzyxdz: '请输入电子邮箱地址',

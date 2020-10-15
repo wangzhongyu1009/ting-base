@@ -1,0 +1,10 @@
+{
+  "_comment": [
+    "${pageName}页面静态数据",
+    "Created By ${Author} ${CurrentDate}",
+    "如需修改联系${Email}"
+  ],
+  "array": [{
+
+  }]
+}

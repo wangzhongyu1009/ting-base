@@ -1,0 +1,26 @@
+{
+  "_comment": [
+    "日志管理页面静态数据",
+    "Created By Wangzhongyu 2019-04-22",
+    "如需修改联系zy.wang@muheda.com"
+  ],
+  "toolBarList": [{
+    "type": "add",
+    "method": "add"
+  },{
+    "type": "edit",
+    "method": "edit"
+  },{
+    "type": "search",
+    "method": "search"
+  },{
+    "type": "group",
+    "children": [{
+      "type": "import",
+      "method": "import"
+    },{
+      "type": "export",
+      "method": "export"
+    }]
+  }]
+}

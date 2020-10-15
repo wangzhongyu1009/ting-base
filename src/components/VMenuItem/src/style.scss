@@ -28,3 +28,11 @@
   vertical-align: middle;
   font-size: 22px;
 }
+.ivu-menu {
+  height: 100%;
+  box-shadow: 1px 1px 5px #d0d0d0;
+  background-color: #eff7ff;
+}
+.ivu-menu-light.ivu-menu-vertical .ivu-menu-item-active:not(.ivu-menu-submenu) {
+  background-color: #fff;
+}

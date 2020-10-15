@@ -6,6 +6,11 @@
 
 export default {
   methods: {
-    
+    async ajaxTest () {
+      let _result = await this.$postNetworkData({
+        url: '',
+        params: {}
+      })
+    }
   }
 }

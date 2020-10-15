@@ -5,7 +5,7 @@
 -->
 
 <template>
-  <Menu mode="horizontal" :active-name="activePath" theme="light" width="auto">
+  <Menu mode="horizontal" :active-name="activePath" theme="dark" width="auto">
     <MenuItem name="1">
       <Icon type="ios-paper"></Icon>
       <span>项目启动策划</span>

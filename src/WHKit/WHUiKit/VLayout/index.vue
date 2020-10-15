@@ -4,26 +4,19 @@
 -->
 
 <template>
-  <Layout class="layout_container">
-
-    <Sider collapsible :collapsed-width="78" v-model="isCollapsed">
-      <Header class="layout_header">
-        <img v-if="!isCollapsed" src="@/assets/logo.png" style="width:40px;height:40px;margin-top:12px;margin-right:5px">
-        {{isCollapsed ? 'PMS'  : '项目管理系统'}}
-      </Header>
-      <menu-item :isCollapsed="isCollapsed"/>
-    </Sider>
-    
-    <Layout>
-      <Header style="background:#fff;border-bottom:2px solid #eee;padding:0 15px">
-        <Row type="flex" justify="end" class="code-row-bg" style="text-align:center">
+  <div class="Layout">
+    <Header class="layout_header_v">
+      <img src="@/assets/logo.png" style="width:40px;height:40px;margin-top:12px">
+      <span style="color:#fff;font-size:20px;margin-left:15px;">易贝恩项目管理系统</span>
+      <Icon type="md-reorder" size="26" color="#fff" style="margin-top:-6px;margin-left:10px;cursor:pointer" @click="isCollapsed = !isCollapsed"/>
+      <Row type="flex" justify="end" class="code-row-bg" style="text-align:center;float:right;width:calc(100% - 360px)">
           
           <i-col span="19">
             <h-menu-item/>
           </i-col>
 
           <i-col span="2" class="row_item">
-            <Icon type="ios-person" size="18" style="margin-top:-2px;margin-right:2px"></Icon>
+            <Icon type="ios-person" size="18" color="#fff" style="margin-top:-2px;margin-right:2px"></Icon>
             <span class="text_name">管理员</span>
             <div class="h_line"></div>
           </i-col>
@@ -59,50 +52,51 @@
           </i-col>
 
         </Row>
-      </Header>
+    </Header>
+    <div style="height:calc(100vh - 64px);display:flex;background-color:#f5f7f9">
 
-      <div style="height:calc(100vh - 64px);display:flex;background-color:#f5f7f9">
-
-        <div style="height:calc(100% - 20px);margin:10px 0 10px 10px;background-color:#fff;border-radius:5px;box-shadow: 1px 1px 8px #d0d0d0;padding:10px;width:calc(100% - 90px)">
-          <keep-alive>
-            <router-view/>
-          </keep-alive>
-        </div>
-        
-        <div style="height:100%;width:80px;position:relative">
-          <div class="nav_icon">
-            <Badge :count="9">
-              <img class="demo_badge" src="@/assets/images/HomePage/todo.png">
-              <div class="demo_text">待办</div>
-            </Badge>
-          </div>
-          <div class="nav_icon">
-            <Badge :count="3">
-              <img class="demo_badge" src="@/assets/images/HomePage/warning.png">
-              <div class="demo_text">警示</div>
-            </Badge>
-          </div>
-          <div class="nav_icon">
-            <Badge :count="1">
-              <img class="demo_badge" src="@/assets/images/HomePage/lead.png">
-              <div class="demo_text">指引</div>
-            </Badge>
-          </div>
-
-          <span style="position:absolute;bottom:50px;left:20px;cursor:pointer" title="切换布局" @click="changeLayout">
-            <Icon type="ios-shirt" size="40" color="#08f"/>
-          </span>
-        </div>
+      <div style="height:100%" :style="{'width': isCollapsed ? '80px' : '190px'}">
+        <MenuItem :isCollapsed="isCollapsed"></MenuItem>
       </div>
 
-    </Layout>
+      <div style="height:calc(100% - 20px);margin:10px 0 10px 10px;background-color:#fff;border-radius:5px;box-shadow: 1px 1px 8px #d0d0d0;padding:10px" :style="{'width': isCollapsed ? 'calc(100vw - 170px)' : 'calc(100vw - 280px)'}">
+        <keep-alive>
+          <router-view/>
+        </keep-alive>
+      </div>
+      
+      <div style="height:100%;width:80px;position:relative">
+        <div class="nav_icon">
+          <Badge :count="9">
+            <img class="demo_badge" src="@/assets/images/HomePage/todo.png">
+            <div class="demo_text">待办</div>
+          </Badge>
+        </div>
+        <div class="nav_icon">
+          <Badge :count="3">
+            <img class="demo_badge" src="@/assets/images/HomePage/warning.png">
+            <div class="demo_text">警示</div>
+          </Badge>
+        </div>
+        <div class="nav_icon">
+          <Badge :count="1">
+            <img class="demo_badge" src="@/assets/images/HomePage/lead.png">
+            <div class="demo_text">指引</div>
+          </Badge>
+        </div>
+        <span style="position:absolute;bottom:50px;left:20px;cursor:pointer" title="切换布局" @click="changeLayout">
+          <Icon type="ios-shirt" size="40" color="#08f"/>
+        </span>
+        
+      </div>
 
-  </Layout>
+    </div>
+  </div>
 </template>
 
 <script>
-import MenuItem from '@/components/MenuItem/index'
-import HMenuItem from '@/components/HMenuItem/index'
+import MenuItem from '@/components/VMenuItem/index'
+import HMenuItem from '@/components/VHMenuItem/index'
 import { mapState, mapActions } from 'vuex'
 export default {
   components: {
@@ -195,7 +189,7 @@ export default {
   height: 20px;
 }
 .text_name {
-  color: $themeColor;
+  color: #fff;
 }
 .row_item {
   cursor: pointer;
@@ -208,6 +202,15 @@ export default {
   color: #fff;
   font-size: 20px;
   text-align: center;
+}
+.ivu-layout-header {
+  padding: 0 25px;
+}
+.ivu-menu-horizontal {
+  height: 64px;
+  line-height: 64px;
+  display: inline-block;
+  float: right;
 }
 .demo_badge{
   width: 42px;

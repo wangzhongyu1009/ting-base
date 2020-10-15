@@ -11,7 +11,7 @@ export default {
     }),
     login () {
       console.log(this.loginForm)
-      this.$router.push({ path: '/Example' })
+      this.$router.push({ path: '/System/DropDown' })
     },
     changeCode () {
       console.log('获取验证码')

@@ -5,7 +5,7 @@
 -->
 
 <template>
-  <Menu :active-name="activePath" theme="dark" width="auto" :class="menuitemClasses" accordion>
+  <Menu :active-name="activePath" theme="light" width="auto" :class="menuitemClasses" accordion>
     <MenuItem name="DropDown" to="DropDown">
       <Icon type="md-list" style="margin-right:12px"></Icon>
       <span>下拉选项</span>

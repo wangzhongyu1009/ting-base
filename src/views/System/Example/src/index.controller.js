@@ -6,6 +6,11 @@
 
 export default {
   methods: {
-    
+    catalogRow (item) {
+      this.catalogRowId = item.id
+    },
+    add () {
+      console.log('点击了添加')
+    }
   }
 }
